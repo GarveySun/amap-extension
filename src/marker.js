@@ -18,12 +18,14 @@ window.AMap.Marker.prototype.zoomIn = function (rate) {
   this.setOffset(offset.translate(zoomIn_rate))
 
   let icon = this.getIcon()
-  let icon_new = new AMap.Icon({
-    image: icon.B.image,
-    size: icon.B.size.translate(zoomIn_rate),
-    imageSize: icon.B.imageSize.translate(zoomIn_rate)
-  })
-  this.setIcon(icon_new)
+  if(icon){
+    let icon_new = new AMap.Icon({
+      image: icon.B.image,
+      size: icon.B.size.translate(zoomIn_rate),
+      imageSize: icon.B.imageSize.translate(zoomIn_rate)
+    })
+    this.setIcon(icon_new)
+  }
 
 }
 
@@ -31,16 +33,18 @@ window.AMap.Marker.prototype.zoomIn = function (rate) {
 window.AMap.Marker.prototype.zoomOut = function (rate) {
   let zoomOut_rate = rate || 2 / 3
 
-  this.lis_zoomIn = false
+  this.is_zoomIn = false
 
   let offset = this.getOffset()
   this.setOffset(offset.translate(zoomOut_rate))
 
   let icon = this.getIcon()
-  let icon_new = new AMap.Icon({
-    image: icon.B.image,
-    size: icon.B.size.translate(zoomOut_rate),
-    imageSize: icon.B.imageSize.translate(zoomOut_rate)
-  })
-  this.setIcon(icon_new)
+  if(icon){
+    let icon_new = new AMap.Icon({
+      image: icon.B.image,
+      size: icon.B.size.translate(zoomOut_rate),
+      imageSize: icon.B.imageSize.translate(zoomOut_rate)
+    })
+    this.setIcon(icon_new)
+  }
 }
