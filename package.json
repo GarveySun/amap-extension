@@ -1,6 +1,6 @@
 {
   "name": "amap-extension",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "extend some methods for AMap",
   "main": "index.js",
   "scripts": {
